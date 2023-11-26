@@ -35,7 +35,7 @@ export const Header = ({ activeItem }: Props) => {
   return (
     <div
       className={`w-full p-5 border-b min-h-[60px] border-b-[#ffffff32] transition-opacity ${
-        active && "fixed top-0 left-0 bg-[#00000] z-[9999]"
+        active && "fixed top-0 left-0 bg-[#000] z-[9999]"
       }`}
     >
       <div className="hidden md:w-[90%] mx-auto md:flex items-center justify-between">
