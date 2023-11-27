@@ -1,11 +1,15 @@
 "use client";
 import { Header } from "@/components/Header/Header";
+import Footer from "@/components/Layouts/Footer";
 import PromptCard from "@/components/Prompts/PromptCard";
 import About from "@/components/Route/About";
 import Future from "@/components/Route/Future";
 import Hero from "@/components/Route/Hero";
+import Partners from "@/components/Route/Partners";
 import BestSeller from "@/components/Shop/BestSeller";
+import SellersBanner from "@/components/Shop/SellerBanner";
 import { styles } from "@/utils/style";
+import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 
 import React from "react";
@@ -56,6 +60,12 @@ const Page = () => {
           <br />
           <BestSeller />
           <Future />
+          <Partners />
+          <SellersBanner />
+          <br />
+          <br />
+          <Divider className="bg-[#ffffff23]" />
+          <Footer />
         </div>
       </div>
     </div>
