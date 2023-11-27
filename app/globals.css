@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* how to write center a div class name jig */
 body {
   background: #030015 !important;
   font-size: 16px;

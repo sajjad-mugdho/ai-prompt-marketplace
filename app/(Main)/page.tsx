@@ -2,7 +2,9 @@
 import { Header } from "@/components/Header/Header";
 import PromptCard from "@/components/Prompts/PromptCard";
 import About from "@/components/Route/About";
+import Future from "@/components/Route/Future";
 import Hero from "@/components/Route/Hero";
+import BestSeller from "@/components/Shop/BestSeller";
 import { styles } from "@/utils/style";
 import Image from "next/image";
 
@@ -51,6 +53,9 @@ const Page = () => {
             <PromptCard />
             <PromptCard />
           </div>
+          <br />
+          <BestSeller />
+          <Future />
         </div>
       </div>
     </div>
