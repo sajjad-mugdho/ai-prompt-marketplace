@@ -1,6 +1,6 @@
 "use client";
-import { Header } from "@/components/Header/Header";
-import Footer from "@/components/Layouts/Footer";
+import { Header } from "@/components/Layouts/Header/Header";
+import Footer from "@/components/Layouts/Footer/Footer";
 import PromptCard from "@/components/Prompts/PromptCard";
 import About from "@/components/Route/About";
 import Future from "@/components/Route/Future";
@@ -28,6 +28,7 @@ const Page = () => {
   if (!isMounted) {
     return null;
   }
+
   return (
     <div>
       <div className="banner">
