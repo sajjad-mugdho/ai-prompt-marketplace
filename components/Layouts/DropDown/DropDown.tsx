@@ -18,9 +18,10 @@ type Props = {
   user: User | null;
   setOpen: (open: boolean) => void;
   handleProfile: () => void;
+  isSellerExist?: boolean;
 };
 
-const DropDown = ({ user, setOpen, handleProfile }: Props) => {
+const DropDown = ({ user, setOpen, handleProfile, isSellerExist }: Props) => {
   const { signOut } = useClerk();
   const router = useRouter();
   const handleLogOut = async () => {
@@ -62,7 +63,7 @@ const DropDown = ({ user, setOpen, handleProfile }: Props) => {
             </span>
           </Link>
         </DropdownItem>
-        <DropdownItem className={`${"hidden"}`}>
+        <DropdownItem className={`${!isSellerExist && "hidden"}`}>
           <Link href={"/my-shop"} className="flex w-full items-center">
             <TbSwitchVertical className="text-2xl ml-2 text-black" />
             <span className={`${styles.label} text-black text-[16px] pl-2`}>

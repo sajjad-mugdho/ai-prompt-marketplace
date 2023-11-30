@@ -19,6 +19,7 @@ const Header = ({ user, activeItem }: Props) => {
   const [active, setactive] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeProfile, setActiveProfile] = useState(false);
+  const [isSellerExist, setIsSellerExist] = useState(false);
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
@@ -66,6 +67,7 @@ const Header = ({ user, activeItem }: Props) => {
                 user={user}
                 setOpen={setOpen}
                 handleProfile={handleProfile}
+                isSellerExist={isSellerExist}
               />
             </div>
           ) : (
@@ -121,6 +123,7 @@ const Header = ({ user, activeItem }: Props) => {
                     user={user}
                     setOpen={setOpen}
                     handleProfile={handleProfile}
+                    isSellerExist={isSellerExist}
                   />
                 )}
               </div>

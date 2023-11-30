@@ -34,8 +34,8 @@ const Page = () => {
     axios
       .get("/api/me")
       .then((res) => {
-        setUser(res.data);
-        console.log(res.data);
+        setUser(res.data.user);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -50,7 +50,9 @@ const Page = () => {
   return (
     <>
       {loading ? (
-        <Loader />
+        <>
+          <Loader />
+        </>
       ) : (
         <div>
           <div className="banner">
