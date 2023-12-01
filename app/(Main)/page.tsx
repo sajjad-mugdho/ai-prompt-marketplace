@@ -22,6 +22,7 @@ const Page = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
+  const [isSellerExist, setIsSellerExist] = useState(false);
 
   useEffect(() => {
     if (!isMounted) {
@@ -35,6 +36,7 @@ const Page = () => {
       .get("/api/me")
       .then((res) => {
         setUser(res.data.user);
+        setIsSellerExist(res.data.shop ? true : false);
         setLoading(false);
       })
       .catch((err) => {
@@ -56,7 +58,11 @@ const Page = () => {
       ) : (
         <div>
           <div className="banner">
-            <Header user={user} activeItem={0}></Header>
+            <Header
+              user={user}
+              isSellerExist={isSellerExist}
+              activeItem={0}
+            ></Header>
             <Hero />
           </div>
           <Image

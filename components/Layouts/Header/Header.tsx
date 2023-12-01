@@ -13,13 +13,13 @@ import Navigation from "../Navigation/Navigation";
 type Props = {
   activeItem: number;
   user: User | null | undefined;
+  isSellerExist: any;
 };
 
-const Header = ({ user, activeItem }: Props) => {
+const Header = ({ user, activeItem, isSellerExist }: Props) => {
   const [active, setactive] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeProfile, setActiveProfile] = useState(false);
-  const [isSellerExist, setIsSellerExist] = useState(false);
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
