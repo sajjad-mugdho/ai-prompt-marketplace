@@ -1,3 +1,4 @@
+"use client";
 import { styles } from "@/utils/style";
 import { useAuth } from "@clerk/nextjs";
 import {
