@@ -1,19 +1,18 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
+import Navigation from "./Navigation";
 import { AiOutlineSearch } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { FaBars } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { UserProfile } from "@clerk/nextjs";
 import { User } from "@clerk/nextjs/server";
-import DropDown from "../DropDown/DropDown";
-import Navigation from "../Navigation/Navigation";
+import DropDown from "./DropDown";
 
 type Props = {
   activeItem: number;
-  user: User | null | undefined;
-  isSellerExist: any;
+  user: User | undefined;
+  isSellerExist: boolean | undefined;
 };
 
 const Header = ({ user, activeItem, isSellerExist }: Props) => {
@@ -52,7 +51,7 @@ const Header = ({ user, activeItem, isSellerExist }: Props) => {
         <div>
           <Link href={"/"}>
             <h1 className="font-Inter text-3xl cursor-pointer">
-              <span className="text-[#64ff4c]">Propmt</span>Marketplace
+              <span className="text-[#64ff4c]">Prompt</span>Marketplace
             </h1>
           </Link>
         </div>
@@ -96,7 +95,7 @@ const Header = ({ user, activeItem, isSellerExist }: Props) => {
             <h1>
               <Link href={"/"}>
                 <h1 className="font-Inter text-3xl cursor-pointer">
-                  <span className="text-[#64ff4c]">Bec</span>odemy
+                  <span className="text-[#64ff4c]">Prompt</span>Marketplace
                 </h1>
               </Link>
             </h1>

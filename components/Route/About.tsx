@@ -1,4 +1,5 @@
-import { styles } from "@/utils/style";
+"use client";
+import { styles } from "@/utils/styles";
 import { Button, Chip } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

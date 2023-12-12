@@ -1,6 +1,5 @@
-"use client";
-
-import { styles } from "@/utils/style";
+'use client'
+import { styles } from "@/utils/styles";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React from "react";

@@ -1,6 +1,5 @@
-"use client";
-
-import { styles } from "@/utils/style";
+'use client'
+import { styles } from "@/utils/styles";
 import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";

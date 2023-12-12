@@ -1,61 +1,79 @@
-import Ratings from "@/utils/Rating";
-import { styles } from "@/utils/style";
-import { Avatar, Button, Card, Divider, Image } from "@nextui-org/react";
 import Link from "next/link";
-import React from "react";
+import Ratings from "@/utils/Ratings";
+import { styles } from "@/utils/styles";
+import { Avatar, Button, Card, Divider } from "@nextui-org/react";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
-type Props = {};
+type Props = {
+  prompt: any;
+};
 
-const PromptCard = (props: Props) => {
+const PromptCard = ({ prompt }: Props) => {
   return (
     <Card
       radius="lg"
-      className="w-full md:w-[31%] 2xl:w-[23%] p-4 bg-[#130f2c] m-3"
+      className="w-full md:w-[31%] 2xl:w-[23%] max-h-[410px] p-4 bg-[#130f23] m-3"
     >
-      <div className="relative ">
+      <div className="relative">
         <Image
+          src={prompt?.images[0]?.url}
           alt=""
-          src="https://pixner.net/aikeu/assets/images/banner/large-slider/one.png"
-          className="w-full"
+          className="w-full !max-h-[200px] object-cover"
           width={300}
           height={300}
         />
         <div className="absolute bottom-2 left-2">
-          <div className="w-max bg-black hover:bg-[#16252] duration-300 hover:text-black text-white transition-opacity p-[10px] flex items-center rounded-xl">
-            <Image
-              src="https://pixner.net/aikeu/assets/images/category/chat.png"
-              width={25}
-              height={25}
-              alt=""
-            />
-
-            <span className={`${styles.label} pl-2 text-white`}>ChatGPT</span>
+          <div className="w-max bg-black hover:bg-[#16252] duration-300 transition-opacity hover:text-black text-white p-[10px] items-center flex rounded-xl">
+            {prompt?.category === "Chatgpt" ? (
+              <Image
+                src="https://pixner.net/aikeu/assets/images/category/chat.png"
+                width={25}
+                height={25}
+                alt=""
+              />
+            ) : (
+              <>
+                {prompt?.category === "Dalle" ? (
+                  "⛵"
+                ) : (
+                  <>
+                    {prompt?.category === "Midjourney" ? (
+                      "🎨"
+                    ) : (
+                      <>{prompt?.category === "Bard" ? "🐥" : null}</>
+                    )}
+                  </>
+                )}
+              </>
+            )}
+            <span className={`${styles.label} pl-2 text-white`}>
+              {prompt?.category}
+            </span>
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between py-2 ">
+      <div className="w-full flex justify-between py-2">
         <h3 className={`${styles.label} text-[18px] text-white`}>
-          Animal Prompts
+          {prompt?.name}
         </h3>
-        <p className={`${styles.paragraph}`}>$25.00</p>
+        <p className={`${styles.paragraph}`}>${prompt?.price}</p>
       </div>
-      <Divider className="bg-[#ffffff18]" />
-      <div className="flex items-center my-2">
-        <Avatar
-          className=""
-          src="https://images.pexels.com/photos/25733/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        />
-        <span className={`${styles.label} pl-3`}> @Sajjad</span>
-        <Ratings rating={5} />
+      <Divider className="bg-[#ffffff18] my-3" />
+      <div className="w-full flex items-center justify-between">
+        <div className="flex items-center">
+          <Avatar src={prompt?.shop?.avatar} />
+          <span className={`${styles.label} pl-3`}>@{prompt?.shop?.name}</span>
+        </div>
+        <Ratings rating={prompt?.rating} />
       </div>
       <br />
-      <Link href={"/shop/123"} className="w-full">
-        <Button
-          className="mb-3 w-full text-white bg-transparent border border-[#16c252] hover:bg-[#16c252] hover:text-black duration-300 transition-opacity
-         font-Inter font-[600]"
+      <Link href={`/prompt/${prompt.id}`} className="w-full">
+        <div
+          className={`${styles.button} !py-2 !px-3 text-center mb-3 w-full text-white bg-transparent border border-[#16c252] hover:bg-[#16c252] hover:text-black duration-300 transition-opacity font-Inter font-[600]`}
         >
           Get Prompts
-        </Button>
+        </div>
       </Link>
     </Card>
   );

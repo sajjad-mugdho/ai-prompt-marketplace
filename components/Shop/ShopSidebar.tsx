@@ -6,7 +6,7 @@ import { TbMoneybag } from "react-icons/tb";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import Link from "next/link";
-import { styles } from "@/utils/style";
+import { styles } from "@/utils/styles";
 
 type Props = {
   active: number;
@@ -58,15 +58,15 @@ const ShopSidebar = ({ active }: Props) => {
           <Link href={item.href}>
             <div className="flex items-center">
               <div
-                className={`text-3xl  ${
-                  active !== index ? "!text-white" : "!text-[#858dfb]"
+                className={`text-3xl ${
+                  active !== index ? "!text-white" : "!text-[#858DFB]"
                 }`}
               >
                 {item.icon}
               </div>
               <span
                 className={`${styles.label} ${
-                  active !== index ? "!text-white" : "!text-[#858dfb]"
+                  active !== index ? "!text-white" : "!text-[#858DFB]"
                 } pl-4`}
               >
                 {item.title}

@@ -1,4 +1,4 @@
-import { styles } from "@/utils/style";
+import { styles } from "@/utils/styles";
 import { User } from "@clerk/nextjs/server";
 import {
   Avatar,

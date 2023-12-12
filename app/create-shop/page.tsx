@@ -1,5 +1,5 @@
 "use client";
-import { styles } from "@/utils/style";
+import { styles } from "@/utils/styles";
 import { useUser } from "@clerk/nextjs";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import axios from "axios";
@@ -76,7 +76,7 @@ const Page = (props: Props) => {
               onChange={(e) =>
                 setShopData({ ...shopData, name: e.target.value })
               }
-              label="Product Name"
+              label="AI Marketplace"
               size="sm"
               variant="bordered"
             />

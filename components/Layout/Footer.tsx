@@ -1,5 +1,5 @@
 "use client";
-import { styles } from "@/utils/style";
+import { styles } from "@/utils/styles";
 import Link from "next/link";
 import React from "react";
 
@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
         <div>
           <Link href={"/"}>
             <h1 className="font-Inter text-3xl cursor-pointer">
-              <span className="text-[#64ff4c]">Prompt</span>Marketplace
+              <span className="text-[#64ff4c]">Propmpt</span>Marketplace
             </h1>
           </Link>
         </div>

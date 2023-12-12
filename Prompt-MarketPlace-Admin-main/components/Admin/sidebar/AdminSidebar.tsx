@@ -118,7 +118,7 @@ const Sidebar = ({ selected, setSelected }: Props) => {
               >
                 <Link href="/" className="block">
                   <h3 className="text-[25px] font-Poppins uppercase text-white">
-                    Becodemy
+                    AI MarketPlace
                   </h3>
                 </Link>
                 <IconButton

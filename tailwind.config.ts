@@ -6,15 +6,15 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./utils/styles.ts",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    "./utils/*",
   ],
   theme: {
-    fontFamily: {
-      Inter: ["var(--font-inter)"],
-      Montserrat: ["var(--font-montserrat)"],
-    },
     extend: {
+      fontFamily:{
+         Inter:["var(--font-inter)"],
+         Monserrat: ["var(--font-montserrat)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -22,6 +22,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [nextui({
+    theme: {}
+  })],
 };
 export default config;
+

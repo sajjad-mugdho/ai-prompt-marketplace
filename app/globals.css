@@ -1,13 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* how to write center a div class name jig */
+
 body {
-  background: #030015 !important;
+  background: #030015!important;
   font-size: 16px;
   font-weight: 400;
   max-width: 100vw;
-  min-height: 100vh;
+  min-height: 100vh; 
   overflow-x: clip;
   color: #fff;
   -webkit-text-size-adjust: 100%;
@@ -28,9 +28,9 @@ body {
   z-index: 1;
 }
 @media screen and (max-width: 760px) {
-  .banner {
-    min-height: unset !important;
-  }
+     .banner{
+      min-height: unset!important;
+     }
 }
 .banner::before {
   position: absolute;
